@@ -1,105 +1,103 @@
-# GitOsint
+# ✦ GitOsint
 
 <p align="center">
-  <img src="https://img.shields.io/badge/HTML-CSS-JS-111111?style=for-the-badge&logo=html5&logoColor=white" alt="Tech Stack">
-  <img src="https://img.shields.io/badge/License-MIT-111111?style=for-the-badge" alt="License">
-  <img src="https://img.shields.io/badge/OSINT-GitHub-111111?style=for-the-badge" alt="OSINT">
+  <img src="https://img.shields.io/badge/HTML-FF7A00?style=for-the-badge&logo=html5&logoColor=white" />
+  <img src="https://img.shields.io/badge/CSS-1572B6?style=for-the-badge&logo=css3&logoColor=white" />
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=000" />
 </p>
 
 <p align="center">
-  <b>GitOsint</b> est une interface web OSINT élégante pour analyser un utilisateur GitHub à partir de données publiques.
+  <b>GitOsint</b> est une interface web OSINT minimaliste pour explorer un profil GitHub public, analyser ses dépôts et récupérer les e-mails visibles dans les commits.
 </p>
 
 ---
 
-## Présentation
+## ✨ Ce que fait le projet
 
-GitOsint permet de rechercher un pseudo GitHub, d’afficher les informations publiques du profil, d’explorer les dépôts et les commits publics, puis d’extraire les adresses e-mail visibles dans les métadonnées GitHub.
-
-L’interface a été pensée pour être :
-- sombre et minimaliste ;
-- rapide à utiliser ;
-- orientée lecture et export ;
-- simple à héberger comme une page HTML statique.
-
----
-
-## Fonctionnalités
-
-- Recherche d’un utilisateur GitHub par pseudo.
-- Affichage du profil public.
-- Scan des dépôts publics non fork.
-- Analyse des commits publics.
-- Extraction des e-mails détectés.
-- Export des résultats en `CSV` et `JSON`.
-- Copie rapide de certaines valeurs.
-- Ajout facultatif d’un token GitHub pour réduire les limites API.
+- 🔎 recherche un utilisateur GitHub par pseudo ;
+- 👤 affiche les infos publiques du profil ;
+- 📦 scanne les dépôts publics non fork ;
+- 🧾 analyse les commits publics ;
+- ✉️ détecte les e-mails trouvés ;
+- 📤 exporte les résultats en `CSV` ou `JSON` ;
+- 🔐 accepte un token GitHub facultatif pour éviter les limites d’API.
 
 ---
 
-## Aperçu
+## 🖼️ Interface
 
-L’interface comprend :
-- un champ de recherche principal ;
-- un champ token repliable ;
-- une carte de résultats animée ;
-- une barre de progression ;
-- un export des données à la fin du scan.
+Le projet utilise un design sombre, avec :
+- un fond animé ;
+- un style glassmorphism ;
+- des inputs fins et modernes ;
+- une carte de résultats compacte ;
+- une barre de progression élégante ;
+- des boutons d’export propres.
 
 ---
 
-## Installation
+## 🚀 Utilisation
 
-### 1. Récupérer le projet
-```bash
-git clone https://github.com/ton-utilisateur/GitOsint.git
-cd GitOsint
+1. Ouvre `gitosint.html` dans ton navigateur.
+2. Entre un pseudo GitHub.
+3. Ajoute un token si besoin.
+4. Clique sur **Scan**.
+5. Consulte les infos du profil, les dépôts scannés et les e-mails extraits.
+6. Exporte les données au format `CSV` ou `JSON`.
+
+Exemple :
+```txt
+Pseudo : torvalds
+Token : optionnel
 ```
 
-### 2. Ouvrir l’application
-Ouvre simplement le fichier `index.html` dans un navigateur moderne.
+---
 
-### 3. Lancer un scan
-- saisis un pseudo GitHub ;
-- ajoute un token si nécessaire ;
-- clique sur **Scan**.
+## 🧠 Données affichées
+
+### Profil
+- ID ;
+- login ;
+- nom ;
+- bio ;
+- type de compte ;
+- site admin ;
+- hireable ;
+- e-mail ;
+- localisation ;
+- entreprise ;
+- site web ;
+- Twitter ;
+- URL GitHub ;
+- stats publiques ;
+- date de création ;
+- date de mise à jour.
+
+### Scan
+- nombre de dépôts scannés ;
+- nombre de commits scannés ;
+- nombre d’e-mails trouvés ;
+- source de chaque e-mail.
 
 ---
 
-## Utilisation
+## 📁 Fichier principal
 
-1. Entre un nom d’utilisateur GitHub.
-2. Clique sur **Scan**.
-3. Consulte le profil, les stats et les e-mails trouvés.
-4. Exporte les résultats en `CSV` ou `JSON`.
+```txt
+gitosint.html
+```
 
-Exemple d’usage :
-- pseudo : `torvalds`
-- token : optionnel
-- export : `gitosint_torvalds.csv`
-
----
-
-## Export des données
-
-### CSV
-Le fichier CSV contient :
-- les métadonnées du scan ;
-- les informations principales du profil ;
-- la liste des e-mails détectés ;
-- la source associée à chaque e-mail.
-
-### JSON
-Le fichier JSON contient :
-- les métadonnées ;
-- l’objet complet du compte ciblé ;
-- les e-mails trouvés avec leur source et leur date de première apparition.
+Tout le projet est contenu dans un seul fichier HTML :
+- structure ;
+- styles ;
+- logique JavaScript ;
+- export des données.
 
 ---
 
-## Configuration du token
+## ⚙️ Token GitHub
 
-Le token GitHub est optionnel, mais recommandé pour éviter les limites de rate limit.
+Le token est **optionnel**, mais conseillé si tu veux limiter les erreurs de rate limit.
 
 Format attendu :
 ```txt
@@ -108,48 +106,61 @@ ghp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 ---
 
-## Limites
+## 📦 Exports
 
-- L’outil n’analyse que les données publiques.
-- Certains profils n’ont aucun e-mail visible.
-- Les résultats dépendent de ce que l’API GitHub renvoie.
-- Sans token, les requêtes peuvent être limitées.
+### CSV
+Le CSV contient :
+- les métadonnées du scan ;
+- les infos du compte ;
+- la liste des e-mails détectés ;
+- la source associée.
+
+### JSON
+Le JSON contient :
+- les métadonnées ;
+- les données du profil ;
+- la liste complète des e-mails ;
+- les dates de première apparition.
 
 ---
 
-## Sécurité
+## ⚠️ Limites
 
-GitOsint doit être utilisé de manière légale, éthique et responsable.  
-Il ne doit servir qu’à analyser des données publiques et accessibles sans autorisation spéciale.
+- seules les données publiques sont accessibles ;
+- certains profils n’ont pas d’e-mail visible ;
+- sans token, l’API GitHub peut limiter les requêtes ;
+- les repos fork ne sont pas scannés.
 
 ---
 
-## Structure du projet
+## 🛡️ Usage responsable
 
+GitOsint doit être utilisé uniquement sur des données publiques et dans un cadre légal.  
+Il est destiné à l’exploration technique, pas à l’exploitation abusive de données personnelles.
+
+---
+
+## 🔧 Améliorations possibles
+
+- ajout d’un loader plus visuel ;
+- pagination des résultats ;
+- filtres par source d’e-mail ;
+- historique des scans ;
+- séparation HTML / CSS / JS ;
+- dark mode encore plus poussé ;
+- mini prévisualisation du profil scanné.
+
+---
+
+## 💬 À propos
+
+Projet léger, rapide et centré sur une interface propre pour l’OSINT GitHub.
+
+---
+
+## 🎯 Nom du fichier
+
+Le fichier principal est :
 ```txt
-index.html
-README.md
+gitosint.html
 ```
-
----
-
-## Roadmap
-
-- amélioration du design responsive ;
-- ajout d’un historique de scans ;
-- filtrage des e-mails par source ;
-- meilleure gestion des erreurs API ;
-- séparation du CSS et du JavaScript ;
-- support de plusieurs profils à la suite.
-
----
-
-## Licence
-
-À définir selon ton usage.
-
----
-
-## Crédits
-
-Développé pour l’analyse OSINT de profils GitHub à partir de données publiques.
